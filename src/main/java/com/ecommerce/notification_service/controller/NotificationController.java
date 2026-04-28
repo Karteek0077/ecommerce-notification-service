@@ -19,7 +19,7 @@ public class NotificationController {
     private final NotificationService notificationService;
 
     @PostMapping
-    public ResponseEntity<NotificationDTO> sendNotification(@RequestBody SendNotificationRequest request) {
+    public ResponseEntity<?> sendNotification(@RequestBody SendNotificationRequest request) {
         try {
             return ResponseEntity.ok(notificationService.sendNotification(request));
         } catch (RuntimeException e) {
